@@ -1,13 +1,13 @@
 @echo off
 setlocal EnableDelayedExpansion
-title Claude Toolbox Beta v1.0
+title claude Toolbox Beta v1.0
 mode con: cols=65 lines=25
 
 :MAIN
 cls
 color 30
 echo.
-echo  [31m   Claude Toolbox Beta v1.0[0m
+echo  [31m   claude Toolbox Beta v1.0[0m
 echo  [37m   ==============================[0m
 echo.
 echo  [37m   [1]  Control Panel[0m
