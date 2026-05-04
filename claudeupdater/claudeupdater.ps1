@@ -46,16 +46,45 @@ function Show-StatusLine {
     }
 }
 
-param(
-    [Parameter(Position=0)]
-    [ValidateSet("check", "lock", "unlock")]
-    [string]$Action
-)
+# Show initial status
+Show-StatusLine
+Write-Host ""
 
-$SDPath = "C:\Windows\SoftwareDistribution"
-$SDBackupPath = "C:\Windows\SoftwareDistribution.bak"
+Write-Host "1. LOCK Windows Updates" -ForegroundColor Yellow
+Write-Host "2. UNLOCK Windows Updates" -ForegroundColor Green
+Write-Host "3. Check and Install Updates" -ForegroundColor Cyan
+Write-Host ""
 
-function Check-AndInstallUpdates {
+$choice = Read-Host "Select option (1, 2, or 3)"
+
+if ($choice -eq "1") {
+    Write-Host "`n=== LOCKING Windows Updates ===" -ForegroundColor Cyan
+    Stop-Service -Name wuauserv -Force
+    Stop-Service -Name bits -Force
+    
+    if (Test-Path "C:\Windows\SoftwareDistribution") {
+        Rename-Item -Path "C:\Windows\SoftwareDistribution" -NewName "SoftwareDistribution.bak" -Force
+        Write-Host "Windows Updates LOCKED successfully" -ForegroundColor Green
+    } else {
+        Write-Host "SoftwareDistribution folder not found" -ForegroundColor Yellow
+    }
+}
+elseif ($choice -eq "2") {
+    Write-Host "`n=== UNLOCKING Windows Updates ===" -ForegroundColor Cyan
+    Stop-Service -Name wuauserv -Force -ErrorAction SilentlyContinue
+    Stop-Service -Name bits -Force -ErrorAction SilentlyContinue
+    
+    if (Test-Path "C:\Windows\SoftwareDistribution.bak") {
+        Rename-Item -Path "C:\Windows\SoftwareDistribution.bak" -NewName "SoftwareDistribution" -Force
+        Write-Host "Windows Updates UNLOCKED successfully" -ForegroundColor Green
+    } else {
+        Write-Host "Backup folder not found" -ForegroundColor Yellow
+    }
+    
+    Start-Service -Name wuauserv
+    Start-Service -Name bits
+}
+elseif ($choice -eq "3") {
     Write-Host "`n=== Checking and Installing Windows Updates ===" -ForegroundColor Cyan
     
     if (-not (Get-Module -ListAvailable -Name PSWindowsUpdate)) {
@@ -67,53 +96,8 @@ function Check-AndInstallUpdates {
     Import-Module PSWindowsUpdate -ErrorAction SilentlyContinue
     Get-WindowsUpdate -Install -AcceptAll -AutoReboot:$false
 }
-
-function Lock-WindowsUpdates {
-    Write-Host "`n=== Locking Windows Updates ===" -ForegroundColor Cyan
-    
-    Stop-Service -Name wuauserv -Force
-    Stop-Service -Name bits -Force
-    
-    if (Test-Path $SDPath) {
-        Rename-Item -Path $SDPath -NewName "SoftwareDistribution.bak" -Force
-        Write-Host "SoftwareDistribution folder locked successfully" -ForegroundColor Green
-    } else {
-        Write-Host "SoftwareDistribution folder not found" -ForegroundColor Yellow
-    }
-}
-
-function Unlock-WindowsUpdates {
-    Write-Host "`n=== Unlocking Windows Updates ===" -ForegroundColor Cyan
-    
-    Stop-Service -Name wuauserv -Force -ErrorAction SilentlyContinue
-    Stop-Service -Name bits -Force -ErrorAction SilentlyContinue
-    
-    if (Test-Path $SDBackupPath) {
-        Rename-Item -Path $SDBackupPath -NewName "SoftwareDistribution" -Force
-        Write-Host "SoftwareDistribution folder unlocked successfully" -ForegroundColor Green
-    } else {
-        Write-Host "Backup folder not found" -ForegroundColor Yellow
-    }
-    
-    Start-Service -Name wuauserv
-    Start-Service -Name bits
-}
-
-# Show initial status
-Show-StatusLine
-Write-Host ""
-
-# Execute based on parameter
-switch ($Action) {
-    "check"   { Check-AndInstallUpdates }
-    "lock"    { Lock-WindowsUpdates }
-    "unlock"  { Unlock-WindowsUpdates }
-    default {
-        Write-Host "Usage: .\claudeupdater.ps1 [check|lock|unlock]" -ForegroundColor Yellow
-        Write-Host "  check   - Check and install Windows updates"
-        Write-Host "  lock    - Lock Windows Updates"  
-        Write-Host "  unlock  - Unlock Windows Updates"
-    }
+else {
+    Write-Host "Invalid choice. Please run again and select 1, 2, or 3." -ForegroundColor Red
 }
 
 # Show final status
