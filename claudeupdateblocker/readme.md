@@ -17,7 +17,7 @@
 - 🔓 **One-click Unlock** with automatic cleanup
 - 📊 **Real-time Status** indicator (LOCKED/UNLOCKED)
 - 📝 **Rich console output** with color-coded messages
-- 🔄 **Auto-refresh** status every second
+- 🔄 **Auto-refresh** status
 
 ## 🎯 What It Does
 
