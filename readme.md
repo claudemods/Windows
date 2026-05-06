@@ -10,7 +10,7 @@
 
 <div align="center">
 
-## claudeupdater v1.0 06-05-2026
+## claudeupdateblocker v1.0 06-05-2026
 
 <div align="center">
 
