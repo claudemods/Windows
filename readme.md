@@ -20,3 +20,16 @@
 
 ```powershell
 powershell -c "Invoke-WebRequest 'https://raw.githubusercontent.com/claudemods/Windows/refs/heads/main/claudeupdateblocker/claudeupdateblocker.ps1' -OutFile $env:TEMP\up.ps1; Start-Process powershell -Verb RunAs -ArgumentList '-ExecutionPolicy Bypass -File $env:TEMP\up.ps1'"
+```
+
+## claudetoolbox v1.0 06-05-2026
+
+<div align="center">
+
+##  [Photos](https://github.com/claudemods/Windows/tree/main/claudetoolbox/photos)
+
+## Windows Usage (Copy & Paste Into Terminal)
+
+```powershell
+powershell -c "Invoke-WebRequest 'https://raw.githubusercontent.com/claudemods/Windows/refs/heads/main/claudetoolbox/claudetoolbox.ps1' -OutFile $env:TEMP\up.ps1; Start-Process powershell -Verb RunAs -ArgumentList '-ExecutionPolicy Bypass -File $env:TEMP\up.ps1'"
+```
