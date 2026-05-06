@@ -1,4 +1,4 @@
-﻿# claudeupdater.ps1 - GUI Version
+# claudeupdater.ps1 - GUI Version
 
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
@@ -146,14 +146,81 @@ $unlockButton.Add_Click({
 $checkButton.Add_Click({
     Write-ColoredOutput -Message "`n=== Checking and Installing Windows Updates ===" -Color 'Cyan'
     
-    if (-not (Get-Module -ListAvailable -Name 'PSWindowsUpdate')) {
-        Write-ColoredOutput -Message 'Installing PSWindowsUpdate module...' -Color 'Yellow'
-        Install-PackageProvider -Name 'NuGet' -Force -ErrorAction SilentlyContinue
-        Install-Module -Name 'PSWindowsUpdate' -Force -AllowClobber -Scope CurrentUser
+    try {
+        # Create Windows Update Session using native COM object
+        $UpdateSession = New-Object -ComObject Microsoft.Update.Session
+        $UpdateSearcher = $UpdateSession.CreateUpdateSearcher()
+        
+        Write-ColoredOutput -Message "Searching for available updates..." -Color 'Yellow'
+        $SearchResult = $UpdateSearcher.Search("IsInstalled=0")
+        
+        $Updates = $SearchResult.Updates
+        $UpdatesAvailable = $Updates.Count
+        
+        if ($UpdatesAvailable -eq 0) {
+            Write-ColoredOutput -Message "No updates found. System is up to date." -Color 'Green'
+            return
+        }
+        
+        Write-ColoredOutput -Message "Found $UpdatesAvailable update(s) available" -Color 'Cyan'
+        
+        # List available updates
+        $i = 1
+        foreach ($Update in $Updates) {
+            Write-ColoredOutput -Message "$i. $($Update.Title)" -Color 'White'
+            if ($Update.MaxDownloadSize -gt 0) {
+                Write-ColoredOutput -Message "   Size: $([math]::Round($Update.MaxDownloadSize/1MB, 2)) MB" -Color 'Gray'
+            }
+            $i++
+        }
+        
+        # Create update downloader
+        $UpdateDownloader = $UpdateSession.CreateUpdateDownloader()
+        $UpdateDownloader.Updates = $Updates
+        
+        Write-ColoredOutput -Message "`nDownloading updates..." -Color 'Yellow'
+        $DownloadResult = $UpdateDownloader.Download()
+        
+        if ($DownloadResult.ResultCode -eq 2) { # ResultCode 2 = Downloaded
+            Write-ColoredOutput -Message "Download completed successfully" -Color 'Green'
+            
+            # Create installer
+            $UpdateInstaller = $UpdateSession.CreateUpdateInstaller()
+            $UpdateInstaller.Updates = $Updates
+            
+            Write-ColoredOutput -Message "Installing updates..." -Color 'Yellow'
+            $InstallResult = $UpdateInstaller.Install()
+            
+            if ($InstallResult.ResultCode -eq 2) { # ResultCode 2 = Installed
+                Write-ColoredOutput -Message "SUCCESS: $($InstallResult.InstalledUpdatesCount) update(s) installed" -Color 'Green'
+                
+                # Check if restart is needed
+                if ($InstallResult.RebootRequired) {
+                    Write-ColoredOutput -Message "`nSystem restart required to complete updates" -Color 'Red'
+                    
+                    $dialogResult = [System.Windows.Forms.MessageBox]::Show(
+                        "Restart required to complete updates. Restart now?", 
+                        "Restart Required", 
+                        [System.Windows.Forms.MessageBoxButtons]::YesNo,
+                        [System.Windows.Forms.MessageBoxIcon]::Question
+                    )
+                    
+                    if ($dialogResult -eq 'Yes') {
+                        Restart-Computer -Force
+                    }
+                }
+            } else {
+                Write-ColoredOutput -Message "Installation failed. Result code: $($InstallResult.ResultCode)" -Color 'Red'
+            }
+        } else {
+            Write-ColoredOutput -Message "Download failed. Result code: $($DownloadResult.ResultCode)" -Color 'Red'
+        }
+    }
+    catch {
+        Write-ColoredOutput -Message "Error: $($_.Exception.Message)" -Color 'Red'
+        Write-ColoredOutput -Message "Make sure you're running as Administrator" -Color 'Yellow'
     }
     
-    Import-Module -Name 'PSWindowsUpdate' -ErrorAction SilentlyContinue
-    Get-WindowsUpdate -Install -AcceptAll -AutoReboot:$false
     Update-StatusLabel
 })
 
