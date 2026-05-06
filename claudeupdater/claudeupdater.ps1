@@ -1,109 +1,168 @@
-# claudeupdater.ps1
+# claudeupdater.ps1 - GUI Version
 
-# Display ASCII Banner
-Write-Host "████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████" -ForegroundColor Red
-Write-Host "░█████╗░██║░░░░░░█████╗░██║░░░██║██████╗░███████╗███╗░░░███╗░█████╗░██████╗░██████╗" -ForegroundColor Red
-Write-Host "██╔══██╗██║░░░░░██╔══██╗██║░░░██║██╔══██╗██╔════╝████╗░████║██╔══██╗██╔══██╗██╔════╝" -ForegroundColor Red
-Write-Host "██║░░╚═╝██║░░░░░███████║██║░░░██║██║░░██║█████╗░░██╔████╔██║██║░░██║██║░░██║╚█████╗░" -ForegroundColor Red
-Write-Host "██║░░██╗██║░░░░░██╔══██║██║░░░██║██║░░██║██╔══╝░░██║╚██╔╝██║██║░░██║██║░░██║░╚═══██╗" -ForegroundColor Red
-Write-Host "╚█████╔╝███████╗██║░░██║╚██████╔╝██████╔╝███████╗██║░╚═╝░██║╚█████╔╝██████╔╝██████╔╝" -ForegroundColor Red
-Write-Host "░╚════╝░╚══════╝╚═╝░░░░░░╚═════╝░╚═════╝░╚══════╝╚═╝░░░░░╚═╝░╚════╝░╚═════╝░╚═════╝░" -ForegroundColor Red
-Write-Host "████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████" -ForegroundColor Red
-Write-Host ""
-Write-Host " claudeupdater v1.0 ── 04-05-2026" -ForegroundColor Cyan
-Write-Host ""
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
 
-# Start a background job that updates status every second
-$script:currentStatus = "Unknown"
-$statusJob = Start-Job -Name StatusUpdater -ScriptBlock {
-    while ($true) {
-        $SDBackupPath = "C:\Windows\SoftwareDistribution.bak"
-        if (Test-Path $SDBackupPath) {
-            $status = "LOCKED"
-        } else {
-            $status = "UNLOCKED"
-        }
-        # Store status in a global variable that main script can read
-        $global:liveStatus = $status
-        Start-Sleep -Seconds 1
+$form = New-Object System.Windows.Forms.Form
+$form.Text = 'claudeupdater beta v1.0 ── 06-05-2026'
+$form.Size = New-Object System.Drawing.Size(900, 600)
+$form.StartPosition = 'CenterScreen'
+$form.BackColor = [System.Drawing.Color]::Black
+
+$asciiLabel = New-Object System.Windows.Forms.Label
+$asciiLabel.Location = New-Object System.Drawing.Point(10, 10)
+$asciiLabel.Size = New-Object System.Drawing.Size(860, 80)
+$asciiLabel.Font = New-Object System.Drawing.Font('Consolas', 7)
+$asciiLabel.ForeColor = [System.Drawing.Color]::Red
+$asciiLabel.TextAlign = 'MiddleCenter'
+$asciiLabel.Text = @"
+████████████████████████████████████████████████████████████████████████████████
+░█████╗░██║░░░░░░█████╗░██║░░░██║██████╗░███████╗███╗░░░███╗░█████╗░██████╗░██████╗
+██╔══██╗██║░░░░░██╔══██╗██║░░░██║██╔══██╗██╔════╝████╗░████║██╔══██╗██╔══██╗██╔════╝
+██║░░╚═╝██║░░░░░███████║██║░░░██║██║░░██║█████╗░░██╔████╔██║██║░░██║██║░░██║╚█████╗░
+██║░░██╗██║░░░░░██╔══██║██║░░░██║██║░░██║██╔══╝░░██║╚██╔╝██║██║░░██║██║░░██║░╚═══██╗
+╚█████╔╝███████╗██║░░██║╚██████╔╝██████╔╝███████╗██║░╚═╝░██║╚█████╔╝██████╔╝██████╔╝
+░╚════╝░╚══════╝╚═╝░░░░░░╚═════╝░╚═════╝░╚══════╝╚═╝░░░░░╚═╝░╚════╝░╚═════╝░╚═════╝░
+████████████████████████████████████████████████████████████████████████████████
+"@
+
+$cyanLabel = New-Object System.Windows.Forms.Label
+$cyanLabel.Location = New-Object System.Drawing.Point(10, 95)
+$cyanLabel.Size = New-Object System.Drawing.Size(860, 25)
+$cyanLabel.Font = New-Object System.Drawing.Font('Consolas', 10, [System.Drawing.FontStyle]::Bold)
+$cyanLabel.ForeColor = [System.Drawing.Color]::Cyan
+$cyanLabel.Text = 'claudeupdater beta v1.0 ── 06-05-2026'
+$cyanLabel.TextAlign = 'MiddleCenter'
+
+$lockButton = New-Object System.Windows.Forms.Button
+$lockButton.Location = New-Object System.Drawing.Point(10, 130)
+$lockButton.Size = New-Object System.Drawing.Size(280, 40)
+$lockButton.Text = '1. LOCK Windows Updates'
+$lockButton.BackColor = [System.Drawing.Color]::DarkRed
+$lockButton.ForeColor = [System.Drawing.Color]::White
+$lockButton.Font = New-Object System.Drawing.Font('Consolas', 12, [System.Drawing.FontStyle]::Bold)
+
+$unlockButton = New-Object System.Windows.Forms.Button
+$unlockButton.Location = New-Object System.Drawing.Point(300, 130)
+$unlockButton.Size = New-Object System.Drawing.Size(280, 40)
+$unlockButton.Text = '2. UNLOCK Windows Updates'
+$unlockButton.BackColor = [System.Drawing.Color]::DarkGreen
+$unlockButton.ForeColor = [System.Drawing.Color]::White
+$unlockButton.Font = New-Object System.Drawing.Font('Consolas', 12, [System.Drawing.FontStyle]::Bold)
+
+$checkButton = New-Object System.Windows.Forms.Button
+$checkButton.Location = New-Object System.Drawing.Point(590, 130)
+$checkButton.Size = New-Object System.Drawing.Size(280, 40)
+$checkButton.Text = '3. Check and Install Updates'
+$checkButton.BackColor = [System.Drawing.Color]::DarkCyan
+$checkButton.ForeColor = [System.Drawing.Color]::White
+$checkButton.Font = New-Object System.Drawing.Font('Consolas', 12, [System.Drawing.FontStyle]::Bold)
+
+$statusLabel = New-Object System.Windows.Forms.Label
+$statusLabel.Location = New-Object System.Drawing.Point(10, 180)
+$statusLabel.Size = New-Object System.Drawing.Size(860, 20)
+$statusLabel.Font = New-Object System.Drawing.Font('Consolas', 10, [System.Drawing.FontStyle]::Bold)
+
+$outputBox = New-Object System.Windows.Forms.RichTextBox
+$outputBox.Location = New-Object System.Drawing.Point(10, 200)
+$outputBox.Size = New-Object System.Drawing.Size(860, 350)
+$outputBox.BackColor = [System.Drawing.Color]::Black
+$outputBox.ForeColor = [System.Drawing.Color]::White
+$outputBox.Font = New-Object System.Drawing.Font('Consolas', 10)
+$outputBox.ReadOnly = $true
+$outputBox.Multiline = $true
+$outputBox.ScrollBars = 'Vertical'
+
+function Write-ColoredOutput {
+    param($Message, $Color)
+    $outputBox.SelectionStart = $outputBox.TextLength
+    $outputBox.SelectionLength = 0
+    
+    switch ($Color) {
+        'Red' { $outputBox.SelectionColor = [System.Drawing.Color]::Red }
+        'Green' { $outputBox.SelectionColor = [System.Drawing.Color]::Green }
+        'Yellow' { $outputBox.SelectionColor = [System.Drawing.Color]::Yellow }
+        'Cyan' { $outputBox.SelectionColor = [System.Drawing.Color]::Cyan }
+        'White' { $outputBox.SelectionColor = [System.Drawing.Color]::White }
+        default { $outputBox.SelectionColor = [System.Drawing.Color]::White }
     }
+    
+    $outputBox.AppendText($Message + "`n")
+    $outputBox.SelectionColor = $outputBox.ForeColor
+    $outputBox.ScrollToCaret()
 }
 
-# Function to display status line
-function Show-StatusLine {
-    # Read the current status from the background job
-    if ($global:liveStatus -eq "LOCKED") {
-        Write-Host "STATUS: Updating LOCKED" -ForegroundColor Red
-    } elseif ($global:liveStatus -eq "UNLOCKED") {
-        Write-Host "STATUS: Updating UNLOCKED" -ForegroundColor Green
+function Update-StatusLabel {
+    $SDBackupPath = 'C:\Windows\SoftwareDistribution.bak'
+    if (Test-Path $SDBackupPath) {
+        $statusLabel.Text = 'STATUS: Updating LOCKED'
+        $statusLabel.ForeColor = [System.Drawing.Color]::Red
     } else {
-        $SDBackupPath = "C:\Windows\SoftwareDistribution.bak"
-        if (Test-Path $SDBackupPath) {
-            Write-Host "STATUS: Updating LOCKED" -ForegroundColor Red
-        } else {
-            Write-Host "STATUS: Updating UNLOCKED" -ForegroundColor Green
-        }
+        $statusLabel.Text = 'STATUS: Updating UNLOCKED'
+        $statusLabel.ForeColor = [System.Drawing.Color]::Green
     }
 }
 
-# Show initial status
-Show-StatusLine
-Write-Host ""
+$timer = New-Object System.Windows.Forms.Timer
+$timer.Interval = 1000
+$timer.Add_Tick({
+    Update-StatusLabel
+})
+$timer.Start()
 
-Write-Host "1. LOCK Windows Updates" -ForegroundColor Yellow
-Write-Host "2. UNLOCK Windows Updates" -ForegroundColor Green
-Write-Host "3. Check and Install Updates" -ForegroundColor Cyan
-Write-Host ""
+Update-StatusLabel
 
-$choice = Read-Host "Select option (1, 2, or 3)"
-
-if ($choice -eq "1") {
-    Write-Host "`n=== LOCKING Windows Updates ===" -ForegroundColor Cyan
-    Stop-Service -Name wuauserv -Force
-    Stop-Service -Name bits -Force
+$lockButton.Add_Click({
+    Write-ColoredOutput -Message "`n=== LOCKING Windows Updates ===" -Color 'Cyan'
+    Stop-Service -Name 'wuauserv' -Force
+    Stop-Service -Name 'bits' -Force
     
-    if (Test-Path "C:\Windows\SoftwareDistribution") {
-        Rename-Item -Path "C:\Windows\SoftwareDistribution" -NewName "SoftwareDistribution.bak" -Force
-        Write-Host "Windows Updates LOCKED successfully" -ForegroundColor Green
+    if (Test-Path 'C:\Windows\SoftwareDistribution') {
+        Rename-Item -Path 'C:\Windows\SoftwareDistribution' -NewName 'SoftwareDistribution.bak' -Force
+        Write-ColoredOutput -Message 'Windows Updates LOCKED successfully' -Color 'Green'
     } else {
-        Write-Host "SoftwareDistribution folder not found" -ForegroundColor Yellow
+        Write-ColoredOutput -Message 'SoftwareDistribution folder not found' -Color 'Yellow'
     }
-}
-elseif ($choice -eq "2") {
-    Write-Host "`n=== UNLOCKING Windows Updates ===" -ForegroundColor Cyan
-    Stop-Service -Name wuauserv -Force -ErrorAction SilentlyContinue
-    Stop-Service -Name bits -Force -ErrorAction SilentlyContinue
+    Update-StatusLabel
+})
+
+$unlockButton.Add_Click({
+    Write-ColoredOutput -Message "`n=== UNLOCKING Windows Updates ===" -Color 'Cyan'
+    Stop-Service -Name 'wuauserv' -Force -ErrorAction SilentlyContinue
+    Stop-Service -Name 'bits' -Force -ErrorAction SilentlyContinue
     
-    if (Test-Path "C:\Windows\SoftwareDistribution.bak") {
-        Rename-Item -Path "C:\Windows\SoftwareDistribution.bak" -NewName "SoftwareDistribution" -Force
-        Write-Host "Windows Updates UNLOCKED successfully" -ForegroundColor Green
+    if (Test-Path 'C:\Windows\SoftwareDistribution.bak') {
+        Rename-Item -Path 'C:\Windows\SoftwareDistribution.bak' -NewName 'SoftwareDistribution' -Force
+        Write-ColoredOutput -Message 'Windows Updates UNLOCKED successfully' -Color 'Green'
     } else {
-        Write-Host "Backup folder not found" -ForegroundColor Yellow
+        Write-ColoredOutput -Message 'Backup folder not found' -Color 'Yellow'
     }
     
-    Start-Service -Name wuauserv
-    Start-Service -Name bits
-}
-elseif ($choice -eq "3") {
-    Write-Host "`n=== Checking and Installing Windows Updates ===" -ForegroundColor Cyan
+    Start-Service -Name 'wuauserv'
+    Start-Service -Name 'bits'
+    Update-StatusLabel
+})
+
+$checkButton.Add_Click({
+    Write-ColoredOutput -Message "`n=== Checking and Installing Windows Updates ===" -Color 'Cyan'
     
-    if (-not (Get-Module -ListAvailable -Name PSWindowsUpdate)) {
-        Write-Host "Installing PSWindowsUpdate module..." -ForegroundColor Yellow
-        Install-PackageProvider -Name NuGet -Force -ErrorAction SilentlyContinue
-        Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser
+    if (-not (Get-Module -ListAvailable -Name 'PSWindowsUpdate')) {
+        Write-ColoredOutput -Message 'Installing PSWindowsUpdate module...' -Color 'Yellow'
+        Install-PackageProvider -Name 'NuGet' -Force -ErrorAction SilentlyContinue
+        Install-Module -Name 'PSWindowsUpdate' -Force -AllowClobber -Scope CurrentUser
     }
     
-    Import-Module PSWindowsUpdate -ErrorAction SilentlyContinue
+    Import-Module -Name 'PSWindowsUpdate' -ErrorAction SilentlyContinue
     Get-WindowsUpdate -Install -AcceptAll -AutoReboot:$false
-}
-else {
-    Write-Host "Invalid choice. Please run again and select 1, 2, or 3." -ForegroundColor Red
-}
+    Update-StatusLabel
+})
 
-# Show final status
-Write-Host ""
-Show-StatusLine
+$form.Controls.Add($asciiLabel)
+$form.Controls.Add($cyanLabel)
+$form.Controls.Add($lockButton)
+$form.Controls.Add($unlockButton)
+$form.Controls.Add($checkButton)
+$form.Controls.Add($statusLabel)
+$form.Controls.Add($outputBox)
 
-# Clean up background job when script ends
-Stop-Job -Name StatusUpdater -ErrorAction SilentlyContinue
-Remove-Job -Name StatusUpdater -ErrorAction SilentlyContinue
+$form.ShowDialog()
