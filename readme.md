@@ -1,1 +1,5 @@
-powershell -Command "& { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $script = Invoke-WebRequest 'https://raw.githubusercontent.com/claudemods/Windows/refs/heads/main/claudeupdater/claudeupdater.ps1' -UseBasicParsing; $script.Content | Out-File -FilePath "$env:TEMP\claudeupdater.ps1" -Encoding UTF8; Start-Process powershell -Verb RunAs -ArgumentList '-ExecutionPolicy Bypass -File "'"$env:TEMP\claudeupdater.ps1"'"' }"
+<p align="center">
+<img src="https://i.postimg.cc/JhMRf2RZ/claudemods-03-17-2025.gif">	
+
+<div align="center">
+  <a href="https://microsoft.com/" target="_blank"><img src="https://img.shields.io/badge/OS-Arch-0000FF?style=for-the-badge&logo=windows" /></a>
