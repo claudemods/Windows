@@ -1,20 +1,10 @@
-# 🔒 ClaudeUpdater.ps1 - Windows Update Lock Tool 🛡️
+# 🔒 ClaudeUpdateblocker.ps1 - Windows Update Lock Tool 🛡️
 
 [![Version](https://img.shields.io/badge/version-beta%20v1.01-blue.svg)](https://github.com/yourrepo/claudeupdater)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-green.svg)](https://microsoft.com/powershell)
 [![Windows](https://img.shields.io/badge/Platform-Windows%2010%2F11-orange.svg)](https://microsoft.com/windows)
 
 > **⚠️ DISCLAIMER:** Use this tool responsibly. Locking Windows Updates may expose your system to security vulnerabilities. Only use if you know what you're doing!
-
-## 📋 Table of Contents
-- [✨ Features](#-features)
-- [🎯 What It Does](#-what-it-does)
-- [🚀 Quick Start](#-quick-start)
-- [📖 How It Works](#-how-it-works)
-- [🖥️ GUI Interface](#️-gui-interface)
-- [🔧 Technical Details](#-technical-details)
-- [⚠️ Important Notes](#-important-notes)
-- [🐛 Troubleshooting](#-troubleshooting)
 
 ## ✨ Features
 
