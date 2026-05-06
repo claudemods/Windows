@@ -198,14 +198,14 @@ $checkButton.Add_Click({
                 if ($InstallResult.RebootRequired) {
                     Write-ColoredOutput -Message "`nSystem restart required to complete updates" -Color 'Red'
                     
-                    $dialogResult = [System.Windows.Forms.MessageBox]::Show(
+                    $restartDialog = [System.Windows.Forms.MessageBox]::Show(
                         "Restart required to complete updates. Restart now?", 
                         "Restart Required", 
                         [System.Windows.Forms.MessageBoxButtons]::YesNo,
                         [System.Windows.Forms.MessageBoxIcon]::Question
                     )
                     
-                    if ($dialogResult -eq 'Yes') {
+                    if ($restartDialog -eq 'Yes') {
                         Restart-Computer -Force
                     }
                 }
