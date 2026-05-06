@@ -1,3 +1,7 @@
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3140500e-88b3-4b7c-9590-501cd5eb0a91" />
+
+
+
 # 🔒 ClaudeUpdateblocker.ps1 - Windows Update Lock Tool 🛡️
 
 [![Version](https://img.shields.io/badge/version-beta%20v1.01-blue.svg)](https://github.com/claudemods/Windows/blob/main/claudeupdateblocker/claudeupdateblocker.ps1)
