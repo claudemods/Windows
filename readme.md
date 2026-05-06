@@ -14,6 +14,8 @@
 
 <div align="center">
 
+##  [Readme](https://github.com/claudemods/Windows/tree/main/claudeupdateblocker)
+
 ##  [Photos](https://github.com/claudemods/Windows/tree/main/claudeupdateblocker/photos)
 
 ## Windows Usage (Copy & Paste Into Terminal)
