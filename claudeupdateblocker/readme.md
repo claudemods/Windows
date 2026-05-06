@@ -1,6 +1,6 @@
 # 🔒 ClaudeUpdateblocker.ps1 - Windows Update Lock Tool 🛡️
 
-[![Version](https://img.shields.io/badge/version-beta%20v1.01-blue.svg)](https://github.com/yourrepo/claudeupdater)
+[![Version](https://img.shields.io/badge/version-beta%20v1.01-blue.svg)](https://github.com/claudemods/Windows/blob/main/claudeupdateblocker/claudeupdateblocker.ps1)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-green.svg)](https://microsoft.com/powershell)
 [![Windows](https://img.shields.io/badge/Platform-Windows%2010%2F11-orange.svg)](https://microsoft.com/windows)
 
