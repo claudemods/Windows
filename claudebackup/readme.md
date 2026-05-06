@@ -3,3 +3,5 @@ the aim is to make a backup tool to clone windows into a iso you can use at a la
 testing things now 
 
 <img width="1280" height="800" alt="Screenshot_win11_2026-05-06_22:46:02" src="https://github.com/user-attachments/assets/c5bb3fe7-cab7-45d7-ac7e-7689e4ee9307" />
+
+<img width="1280" height="800" alt="Screenshot_win11_2026-05-06_22:47:02" src="https://github.com/user-attachments/assets/a34c5611-6431-43bd-8cb2-b35f9e068eca" />
