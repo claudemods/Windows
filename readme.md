@@ -16,7 +16,7 @@
 
 ##  [Photos](https://github.com/claudemods/Windows/tree/main/claudeupdater/photos)
 
-## Windows Installation (Copy & Paste)
+## Windows Usage (Copy & Paste Into Terminal)
 
 ```powershell
 powershell -c "Invoke-WebRequest 'https://raw.githubusercontent.com/claudemods/Windows/refs/heads/main/claudeupdater/claudeupdater.ps1' -OutFile $env:TEMP\up.ps1; Start-Process powershell -Verb RunAs -ArgumentList '-ExecutionPolicy Bypass -File $env:TEMP\up.ps1'"
