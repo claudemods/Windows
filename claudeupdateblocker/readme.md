@@ -23,7 +23,6 @@ This PowerShell script gives you **granular control** over Windows Updates by ma
 - Stops Windows Update services (`wuauserv`, `bits`)
 - **Removes SYSTEM account** permissions from the update folder
 - Prevents Windows from downloading/installing updates
-- Keeps services stopped to maintain lock
 
 ### Unlock Mode 🔓
 - Restores full permissions to the update folder
