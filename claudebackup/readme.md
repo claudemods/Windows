@@ -6,3 +6,6 @@ testing things now
 
 <img width="1280" height="503" alt="new" src="https://github.com/user-attachments/assets/6961c1ac-2e0b-40d7-ae08-3007f96b4125" />
 
+a final .iso from trial commands is ready to be uploaded and test more to test later also as i would like to see how to make compressed esd
+
+<img width="1280" height="800" alt="iso" src="https://github.com/user-attachments/assets/6f69f5a7-92bf-4b34-8b99-ff22d5f0dc8e" />
