@@ -29,7 +29,7 @@ This tool automates the complete workflow of converting a **Windows system backu
 
 ### 📂 Expected Environment
 
-- A folder named `ISO_Build` containing bootable media structure (boot, efi directories, etc.)
+- A folder named `Iso_Build` containing bootable media structure (boot, efi directories, etc.)
 - Windows Assessment and Deployment Kit (for ISO creation tools)
 - wimlib utilities for optimized WIM capture
 
