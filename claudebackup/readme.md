@@ -49,7 +49,7 @@ This tool automates the complete workflow of converting a **Windows system backu
 
 - **🕐 Time-saving** - No manual command-line steps
 - **🛡️ Reliable** - Consistent, repeatable process every time
-- **📦 Portable** - Single Iso to restore your system to the same machine as it was before it was backed up
+- **📦 Portable** - Single Iso that can restore to the same machine what you had before it was backed up
 - **🔧 Ready-to-use** - Output works with standard deployment tools
 
 ---
