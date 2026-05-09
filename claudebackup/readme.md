@@ -3,7 +3,9 @@
 
 ##  [Download](https://claudemodsreloaded.co.uk/claudebackup/info.php)
 
-### installer script being tested everything else works you can backup to iso for now till i update with a guide and news
+### installer script being tested from working commands 
+
+### everything else works you can backup to iso for now till i update with a guide and news
 
 ### prerequisites
 1:) hyper v (setup in windows features)
