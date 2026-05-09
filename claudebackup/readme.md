@@ -1,11 +1,12 @@
-<img width="1319" height="864" alt="image" src="https://github.com/user-attachments/assets/4333de9c-175f-4706-959f-8dc3db03f15e" />
+<img width="660" height="443" alt="image" src="https://github.com/user-attachments/assets/19736b52-f509-4287-b936-1373f5d9b08f" />
+
 
 
 ##  [Download](https://claudemodsreloaded.co.uk/claudebackup/info.php)
 
-### installer script being tested from working commands 
+### installer script (install.cmd) inside Iso_Build/sources being tested from working commands 
 
-### everything else works you can backup to iso for now till i update with a guide and news
+### everything else works you can backup to iso for now i will update with a guide and changelog
 
 ### prerequisites
 1:) hyper v (setup in windows features)
