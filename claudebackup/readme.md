@@ -9,6 +9,7 @@
 1:) hyper v (setup in windows features)
 
 2:) WindowsADK (in admin powershell copy and paste below command) 
+
 winget install --id Microsoft.WindowsADK --source winget
 
 # 🖥️ claudebackup windows 10/11 system cloning tool
