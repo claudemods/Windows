@@ -3,7 +3,7 @@
 
 ##  [Download](https://claudemodsreloaded.co.uk/claudebackup/info.php)
 
-### installer script being tested everything else works you can backup for now till i update with a guide and news
+### installer script being tested everything else works you can backup to iso for now till i update with a guide and news
 
 # 🖥️ claudebackup windows 10/11 system cloning tool
 
