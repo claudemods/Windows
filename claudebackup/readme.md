@@ -1,6 +1,9 @@
-<img width="882" height="586" alt="iso" src="https://github.com/user-attachments/assets/4a8b121e-0332-48fa-8a29-436f30fe33d1" />
+<img width="1319" height="864" alt="image" src="https://github.com/user-attachments/assets/4333de9c-175f-4706-959f-8dc3db03f15e" />
 
 
+##  [Download](https://claudemodsreloaded.co.uk/claudebackup/info.php)
+
+### installer script being tested everything else works you can backup for now till i update with a guide and news
 
 # 🖥️ claudebackup windows 10/11 system cloning tool
 
