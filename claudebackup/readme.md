@@ -5,6 +5,11 @@
 
 ### installer script being tested everything else works you can backup to iso for now till i update with a guide and news
 
+### prerequisites
+1:) hyper v (setup in windows features)
+2:) WindowsADK (in admin powershell copy and paste below command) 
+winget install --id Microsoft.WindowsADK --source winget
+
 # 🖥️ claudebackup windows 10/11 system cloning tool
 
 ## ✨ What This Tool Does
