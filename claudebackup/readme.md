@@ -1,7 +1,3 @@
-<p align="center">
-<img width="660" height="443" alt="image" src="https://github.com/user-attachments/assets/19736b52-f509-4287-b936-1373f5d9b08f" />
-</p>
-
 <div align="center">
 
   <a href="https://www.microsoft.com/windows" target="_blank"><img src="https://img.shields.io/badge/OS-Windows-0078D6?style=for-the-badge&logo=windows" /></a>
@@ -43,6 +39,12 @@
 ---
 
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1-blue) ![Batch](https://img.shields.io/badge/Batch-Script-4B8BBE) ![License](https://img.shields.io/badge/license-MIT-green)
+
+
+<p align="center">
+<img width="660" height="443" alt="image" src="https://github.com/user-attachments/assets/19736b52-f509-4287-b936-1373f5d9b08f" />
+</p>
+
 
 ## 📝 Table of Contents
 - [Features](#-features)
