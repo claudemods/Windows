@@ -30,7 +30,7 @@
       
   </div>
    
-   ## [ Website Info Page ](https://claudemodsreloaded.co.uk/claudebackup/info.php) ## [ Download ](https://claudemodsreloaded.co.uk/claudebackup/info.php)
+   ## [ Download ](https://claudemodsreloaded.co.uk/claudebackup/info.php)
 
 
 </div>
