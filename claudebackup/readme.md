@@ -61,7 +61,6 @@
 - 🖤 **Sleek Dark Theme GUI** - Eye-friendly black interface with cyan/red accents
 - 📊 **Visual Progress Bar** - Real-time tracking of multi-step operations
 - 📝 **Live Log Console** - Detailed operation output in neon green text
-- 🖱️ **Point-and-Click Interface** - Simple browse button to select backup destinations
 - 🔄 **UEFI/BIOS Compatible** - Dual boot support for modern and legacy systems
 - 📦 **Single File Output** - Everything packaged into one clean ISO
 - ⏱️ **Time-saving Automation** - No manual command-line steps required
