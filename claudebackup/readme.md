@@ -1,8 +1,9 @@
 <div align="center">
 
-  <a href="https://www.microsoft.com/windows" target="_blank"><img src="https://img.shields.io/badge/OS-Windows-0078D6?style=for-the-badge&logo=windows" /></a>
-  
-  <a href="https://www.microsoft.com/windows/windows-10" target="_blank"><img src="https://img.shields.io/badge/VERSION-10/11-00a4ef?style=for-the-badge&logo=windows10" /></a>
+  <div align="center">
+    <a href="https://www.microsoft.com/windows" target="_blank"><img src="https://img.shields.io/badge/OS-Windows-0078D6?style=for-the-badge&logo=windows" /></a>
+    <a href="https://www.microsoft.com/windows/windows-10" target="_blank"><img src="https://img.shields.io/badge/VERSION-10/11-00a4ef?style=for-the-badge&logo=windows10" /></a>
+  </div>
   
   <a href="https://chat.deepseek.com/" target="_blank">
     <img src="https://img.shields.io/badge/Built_Using-DeepSeek-4D6BFE?style=for-the-badge&logo=deepseek&logoColor=4D6BFE" alt="Built Using DeepSeek">
@@ -38,8 +39,9 @@
 
 ---
 
-![PowerShell](https://img.shields.io/badge/PowerShell-5.1-blue) ![Batch](https://img.shields.io/badge/Batch-Script-4B8BBE) ![License](https://img.shields.io/badge/license-MIT-green)
-
+<div align="center">
+  <img src="https://img.shields.io/badge/PowerShell-5.1-blue" /> <img src="https://img.shields.io/badge/Batch-Script-4B8BBE" /> <img src="https://img.shields.io/badge/license-MIT-green" />
+</div>
 
 <p align="center">
 <img width="660" height="443" alt="image" src="https://github.com/user-attachments/assets/19736b52-f509-4287-b936-1373f5d9b08f" />
@@ -81,4 +83,5 @@
 # Run in Administrator PowerShell
 winget install --id Microsoft.WindowsADK --source winget
 ```
+
 <strong> Copyright <2026> <claudemods> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. <strong>
