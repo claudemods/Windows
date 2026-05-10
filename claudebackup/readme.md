@@ -79,7 +79,10 @@
 - **wimlib (supplied with tool)** - For optimized WIM capture
 - **Iso_Build folder structure (supplied with tool)** - Bootable media structure (boot, efi directories, etc.)
 
+  <div align="center">
+
 ### Windows ADK Installation:
+
 ```powershell
 # Run in Administrator PowerShell
 winget install --id Microsoft.WindowsADK --source winget
