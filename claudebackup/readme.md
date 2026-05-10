@@ -89,7 +89,7 @@ winget install --id Microsoft.WindowsADK --source winget
 
 2) The script will then process to mount the vhdx and compress its data into a .wim
 
-3) The bootable iso will be in current directory of claudebackup.exe
+3) The bootable iso will be in current directory of claudebackup.exe as windowsbackup-date/time.iso
 
 4) Boot the iso then open cmd (shift + f10) + enter command below to launch installer
     D:\sources\install.cmd
