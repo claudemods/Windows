@@ -1,4 +1,6 @@
-<div align="center">
+<p align="center">
+<img width="660" height="443" alt="image" src="https://github.com/user-attachments/assets/19736b52-f509-4287-b936-1373f5d9b08f" />
+</p>
 
   <div align="center">
     <a href="https://www.microsoft.com/windows" target="_blank"><img src="https://img.shields.io/badge/OS-Windows-0078D6?style=for-the-badge&logo=windows" /></a>
@@ -42,10 +44,6 @@
 <div align="center">
   <img src="https://img.shields.io/badge/PowerShell-5.1-blue" /> <img src="https://img.shields.io/badge/Batch-Script-4B8BBE" /> <img src="https://img.shields.io/badge/license-MIT-green" />
 </div>
-
-<p align="center">
-<img width="660" height="443" alt="image" src="https://github.com/user-attachments/assets/19736b52-f509-4287-b936-1373f5d9b08f" />
-</p>
 
 
 ## 📝 Table of Contents
