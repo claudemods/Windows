@@ -33,8 +33,7 @@
 </div>
 
 <div align="center">
-  <h5 align="center">Hello, welcome to claudebackup Windows 10/11 System Cloning Tool!</h5>
-</div>
+  ## 🖥️ Claudebackup Windows 10/11 System Cloning Tool 🚀
 
 <p align="center"> Sailing the 7 seas like Clonezilla, Macrium Reflect, Acronis and father Norton Ghost! </p>
 
@@ -51,11 +50,6 @@
 - [Usage](#-usage)
 - [Core Workflow](#-core-workflow)
 
-## 🖥️ Claudebackup Windows 10/11 System Cloning Tool 🚀
-
-<p align="center">This Is For Windows 10/11 Systems </p>
-
-<p align="center">Creating Bootable ISO Backups From Live Systems </p>
 
 ## ✨ Features
 
