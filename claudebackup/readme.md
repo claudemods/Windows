@@ -47,9 +47,8 @@
 - [Features](#-features)
 - [Prerequisites](#-prerequisites)
 - [Installation](#-installation)
-- [Usage](#-usage)
 - [Core Workflow](#-core-workflow)
-
+- [Usage](#-usage)
 
 ## ✨ Features
 
@@ -83,5 +82,16 @@
 # Run in Administrator PowerShell
 winget install --id Microsoft.WindowsADK --source winget
 ```
+
+## 📖 Usage
+
+1) Select a drive with enough space for the vhdx you will clone your used system space into
+
+2) The script will then process to mount the vhdx and compress its data into a .wim
+
+3) The bootable iso will be in current directory of claudebackup.exe
+
+4) Boot the iso then open cmd (shift + f10) + enter command below to launch installer
+    D:\sources\install.cmd
 
 <strong> Copyright <2026> <claudemods> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. <strong>
