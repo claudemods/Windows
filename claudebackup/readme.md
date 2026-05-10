@@ -47,6 +47,7 @@
   <img src="https://img.shields.io/badge/PowerShell-5.1-blue" /> <img src="https://img.shields.io/badge/Batch-Script-4B8BBE" /> <img src="https://img.shields.io/badge/license-MIT-green" />
 </div>
 
+  <div align="center">
 
 ## 📝 Table of Contents
 - [Features](#-features)
