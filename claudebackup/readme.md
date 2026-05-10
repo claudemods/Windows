@@ -10,6 +10,10 @@
 
 </div>
 
+<div align="center">
+  <img src="https://img.shields.io/badge/PowerShell-5.1-blue" /> <img src="https://img.shields.io/badge/Batch-Script-4B8BBE" /> <img src="https://img.shields.io/badge/license-MIT-green" />
+</div>
+
   <div align="center">
     <a href="https://www.microsoft.com/windows" target="_blank"><img src="https://img.shields.io/badge/OS-Windows-0078D6?style=for-the-badge&logo=windows" /></a>
     <a href="https://www.microsoft.com/windows/windows-10" target="_blank"><img src="https://img.shields.io/badge/VERSION-10/11-00a4ef?style=for-the-badge&logo=windows10" /></a>
@@ -26,11 +30,8 @@
       
   </div>
    
-   ## [ Website Info Page ](https://claudemodsreloaded.co.uk/claudebackup/info.php)
+   ## [ Website Info Page ](https://claudemodsreloaded.co.uk/claudebackup/info.php) ## [ Download ](https://claudemodsreloaded.co.uk/claudebackup/info.php)
 
-  ## [ Download ](https://claudemodsreloaded.co.uk/claudebackup/info.php)
-
-  ## [ Support Me ](https://www.paypal.com/paypalme/claudemods?country.x=GB&locale)
 
 </div>
 
@@ -42,10 +43,6 @@
 </div>
 
 ---
-
-<div align="center">
-  <img src="https://img.shields.io/badge/PowerShell-5.1-blue" /> <img src="https://img.shields.io/badge/Batch-Script-4B8BBE" /> <img src="https://img.shields.io/badge/license-MIT-green" />
-</div>
 
   <div align="center">
 
