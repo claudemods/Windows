@@ -6,6 +6,8 @@
     <a href="https://www.microsoft.com/windows" target="_blank"><img src="https://img.shields.io/badge/OS-Windows-0078D6?style=for-the-badge&logo=windows" /></a>
     <a href="https://www.microsoft.com/windows/windows-10" target="_blank"><img src="https://img.shields.io/badge/VERSION-10/11-00a4ef?style=for-the-badge&logo=windows10" /></a>
   </div>
+
+  <div align="center">
   
   <a href="https://chat.deepseek.com/" target="_blank">
     <img src="https://img.shields.io/badge/Built_Using-DeepSeek-4D6BFE?style=for-the-badge&logo=deepseek&logoColor=4D6BFE" alt="Built Using DeepSeek">
