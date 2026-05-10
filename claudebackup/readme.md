@@ -50,7 +50,6 @@
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [Core Workflow](#-core-workflow)
-- [License](#-license)
 
 ## 🖥️ Claudebackup Windows 10/11 System Cloning Tool 🚀
 
