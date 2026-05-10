@@ -58,18 +58,6 @@
 
 <p align="center">Creating Bootable ISO Backups From Live Systems </p>
 
-<div align="center">
-  <h3 align="center">this project is an experimental playground</h3>
-</div>
-
-<div align="center">
-  <h3 align="center">i have wild ideas and lots of things being made in this repository</h3>
-</div>
-
-<div align="center">
-  <h3 align="center">contribute if you want and test all new scripts with caution!</h3>
-</div>
-
 ## ✨ Features
 
 - 🚀 **Automated Backup Capture** - Creates full VHDX backup of your C: drive using Windows Backup
