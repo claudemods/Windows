@@ -34,7 +34,7 @@
 
 <div align="center">
   
-  ## 🖥️ Claudebackup Windows 10/11 System Cloning Tool 🚀
+  ## 🖥️ claudebackup Windows 10/11 System Cloning Tool 🚀
 
 <p align="center"> Sailing the 7 seas like Clonezilla, Macrium Reflect, Acronis and father Norton Ghost! </p>
 
