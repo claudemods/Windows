@@ -2,6 +2,14 @@
 <img width="877" height="638" alt="win" src="https://github.com/user-attachments/assets/88d173f1-4897-4ec3-8b85-a6384c581418" />
 </p>
 
+<div align="center">
+  
+  ## 🖥️ claudebackup Windows 10/11 System Cloning Tool 🚀
+
+<p align="center"> Sailing the 7 seas like Clonezilla, Macrium Reflect, Acronis and father Norton Ghost! </p>
+
+</div>
+
   <div align="center">
     <a href="https://www.microsoft.com/windows" target="_blank"><img src="https://img.shields.io/badge/OS-Windows-0078D6?style=for-the-badge&logo=windows" /></a>
     <a href="https://www.microsoft.com/windows/windows-10" target="_blank"><img src="https://img.shields.io/badge/VERSION-10/11-00a4ef?style=for-the-badge&logo=windows10" /></a>
@@ -30,14 +38,6 @@
     
   [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&label=claudemods&color=3399FF&Linux&logo=ko-fi&logoColor=white)](https://ko-fi.com/claudemods)
   [![GitHub Sponsors](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&label=claudemods&color=A836FF&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/sponsors/claudemods)
-
-</div>
-
-<div align="center">
-  
-  ## 🖥️ claudebackup Windows 10/11 System Cloning Tool 🚀
-
-<p align="center"> Sailing the 7 seas like Clonezilla, Macrium Reflect, Acronis and father Norton Ghost! </p>
 
 </div>
 
