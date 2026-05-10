@@ -44,19 +44,19 @@
   <div align="center">
 
 ## 📝 Table of Contents
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Features](#-features)
-- [Usage](#-usage)
+ [Prerequisites](#-prerequisites)
+ [Installation](#-installation)
+ [Features](#-features)
+ [Usage](#-usage)
 
 
 ## 📋 Prerequisites
 
 ### Required Components:
-- **Hyper-V** - Setup via Windows Features
-- **Windows ADK** - Assessment and Deployment Kit
-- **wimlib (supplied with tool)** - For optimized WIM capture
-- **Iso_Build folder structure (supplied with tool)** - Bootable media structure (boot, efi directories, etc.)
+ **Hyper-V** - Setup via Windows Features
+ **Windows ADK** - Assessment and Deployment Kit
+ **wimlib (supplied with tool)** - For optimized WIM capture
+ **Iso_Build folder structure (supplied with tool)** - Bootable media structure (boot, efi directories, etc.)
 
   <div align="center">
 
@@ -71,17 +71,17 @@ winget install --id Microsoft.WindowsADK --source winget
 
 ## ✨ Features
 
-- 🚀 **Automated Backup Capture** - Creates full VHDX backup of your C: drive using Windows Backup
-- 💾 **VHDX Mounting** - Automatically mounts backup files to access contents
-- 🗜️ **High Compression WIM Creation** - LZMS solid compression for smaller file sizes
-- 💿 **ISO Building** - Packages WIM alongside bootable media files into a complete bootable ISO
-- 🖤 **Sleek Dark Theme GUI** - Eye-friendly black interface with cyan/red accents
-- 📊 **Visual Progress Bar** - Real-time tracking of multi-step operations
-- 📝 **Live Log Console** - Detailed operation output in neon green text
-- 🔄 **UEFI/BIOS Compatible** - Dual boot support for modern and legacy systems
-- 📦 **Single File Output** - Everything packaged into one clean ISO
-- ⏱️ **Time-saving Automation** - No manual command-line steps required
-- 🛡️ **Reliable Process** - Consistent, repeatable backup creation every time
+ 🚀 **Automated Backup Capture** - Creates full VHDX backup of your C: drive using Windows Backup
+ 💾 **VHDX Mounting** - Automatically mounts backup files to access contents
+ 🗜️ **High Compression WIM Creation** - LZMS solid compression for smaller file sizes
+ 💿 **ISO Building** - Packages WIM alongside bootable media files into a complete bootable ISO
+ 🖤 **Sleek Dark Theme GUI** - Eye-friendly black interface with cyan/red accents
+ 📊 **Visual Progress Bar** - Real-time tracking of multi-step operations
+ 📝 **Live Log Console** - Detailed operation output in neon green text
+ 🔄 **UEFI/BIOS Compatible** - Dual boot support for modern and legacy systems
+ 📦 **Single File Output** - Everything packaged into one clean ISO
+ ⏱️ **Time-saving Automation** - No manual command-line steps required
+ 🛡️ **Reliable Process** - Consistent, repeatable backup creation every time
 
   <div align="center">
 
