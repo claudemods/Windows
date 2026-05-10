@@ -83,6 +83,8 @@
 
 ### Windows ADK Installation:
 
+  <div align="center">
+
 ```powershell
 # Run in Administrator PowerShell
 winget install --id Microsoft.WindowsADK --source winget
