@@ -35,6 +35,7 @@ Open **Windows Settings** → **Privacy & Security** → **Windows Security** �
 - Cloud-delivered protection
 - Automatic sample submission
 - Tamper Protection
+- download Defender Remover
 
 #### Step 2: Disable Windows Defender using DControl
 1. Launch DControl as Administrator from folder dcontrol
