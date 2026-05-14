@@ -3,9 +3,9 @@
 
 # 🛡️ Windows Defender Remover v1.0
 
-[![Version](https://img.shields.io/badge/version-1.0-red.svg)](https://github.com/yourusername/defender-remover)
-[![Date](https://img.shields.io/badge/release-14--05--2026-blue.svg)](https://github.com/yourusername/defender-remover)
-[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://github.com/yourusername/defender-remover)
+[![Version](https://img.shields.io/badge/version-1.0-red.svg)](https://github.com/claudemods/Windows/tree/main/DefenderRemover/updates)
+[![Date](https://img.shields.io/badge/release-14--05--2026-blue.svg)](https://github.com/claudemods/Windows/tree/main/DefenderRemover/updates)
+[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://apps.microsoft.com/detail/9mz1snwt0n5d?hl=en-GB&gl=GB)
 
 ## 📋 Overview
 
