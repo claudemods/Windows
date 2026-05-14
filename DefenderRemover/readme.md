@@ -1,3 +1,6 @@
+<img width="876" height="627" alt="Screenshot_win11-clone2_2026-05-14_20:41:32" src="https://github.com/user-attachments/assets/55408e9e-539f-4de1-a12e-90902bf70f2a" />
+
+
 # 🛡️ Windows Defender Remover v1.0
 
 [![Version](https://img.shields.io/badge/version-1.0-red.svg)](https://github.com/yourusername/defender-remover)
