@@ -49,5 +49,6 @@ Open **Windows Settings** → **Privacy & Security** → **Windows Security** �
 1. Launch DefenderRemover
 2. Click the **"Remove Defender"** button
 3. Wait for completion message
+4. currently for now these steps will need to be done after each windows update
 
 ## [Download]((https://github.com/claudemods/Windows/tree/main/DefenderRemover/updates) 
