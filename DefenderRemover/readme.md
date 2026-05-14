@@ -16,6 +16,7 @@
 - 👑 **SYSTEM Privileges** - Executes commands with highest privileges
 - 🧹 **Complete Removal** - Removes all Windows Defender directories and services
 - 📊 **Real-time Status** - Visual feedback during each step
+- 📊 **outputs** - log feedback for each step sved to a log
 
 ## 📦 Requirements
 
