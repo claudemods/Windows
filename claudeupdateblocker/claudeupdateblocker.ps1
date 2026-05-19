@@ -1,4 +1,4 @@
-﻿# claudeupdater.ps1 - GUI Version
+# claudeupdater.ps1 - GUI Version
 
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
@@ -22,7 +22,7 @@ $asciiLabel.Text = @"
 ██║░░╚═╝██║░░░░░███████║██║░░░██║██║░░██║█████╗░░██╔████╔██║██║░░██║██║░░██║╚█████╗░
 ██║░░██╗██║░░░░░██╔══██║██║░░░██║██║░░██║██╔══╝░░██║╚██╔╝██║██║░░██║██║░░██║░╚═══██╗
 ╚█████╔╝███████╗██║░░██║╚██████╔╝██████╔╝███████╗██║░╚═╝░██║╚█████╔╝██████╔╝██████╔╝
-░╚════╝░╚══════╝╚═╝░░░░░░╚═════╝░╚═════╝░╚══════╝╚═╝░░░░░╚═╝░╚════╝░╚═════╝░╚═════╝░
+░╚════╝░╚══════╝╚═╝░░░░░░░░░░╚═════╝░╚═════╝░╚══════╝╚═╝░░░░░╚═╝░╚════╝░╚═════╝░╚═════╝░
 ████████████████████████████████████████████████████████████████████████████████
 "@
 
@@ -85,7 +85,6 @@ function Write-ColoredOutput {
 }
 
 function Update-StatusLabel {
-    # Check if SYSTEM is removed from the folder (icacls lock method)
     $acl = icacls "C:\Windows\SoftwareDistribution" 2>$null
     if ($acl -match "NT AUTHORITY\\SYSTEM:") {
         $statusLabel.Text = 'STATUS: Updating UNLOCKED'
@@ -118,11 +117,11 @@ $lockButton.Add_Click({
 
 $unlockButton.Add_Click({
     Write-ColoredOutput -Message "`n=== UNLOCKING Windows Updates ===" -Color 'Cyan'
-    Stop-Service -Name 'wuauserv' -Force
-    Stop-Service -Name 'bits' -Force
-    takeown /f "C:\Windows\SoftwareDistribution" /r /d y
-    icacls "C:\Windows\SoftwareDistribution" /grant "Administrators:(OI)(CI)(F)"
-    Remove-Item "C:\Windows\SoftwareDistribution" -Recurse -Force
+    Invoke-WebRequest -Uri "https://download.sysinternals.com/files/PSTools.zip" -OutFile "$env:TEMP\PSTools.zip"
+    Expand-Archive -Path "$env:TEMP\PSTools.zip" -DestinationPath "$env:TEMP\PSTools" -Force
+    & "$env:TEMP\PSTools\PsExec.exe" -accepteula -s cmd /c "icacls C:\Windows\SoftwareDistribution /reset /t"
+    Rename-Item -Path "C:\Windows\SoftwareDistribution" -NewName "SoftwareDistribution_old" -Force
+    Remove-Item "C:\Windows\SoftwareDistribution_old" -Recurse -Force
     Start-Service wuauserv
     Start-Service bits
     Write-ColoredOutput -Message 'Windows Updates UNLOCKED successfully' -Color 'Green'
