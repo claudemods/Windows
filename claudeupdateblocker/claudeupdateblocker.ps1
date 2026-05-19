@@ -4,7 +4,7 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 $form = New-Object System.Windows.Forms.Form
-$form.Text = 'claudeupdateblocker beta v1.01 ── 06-05-2026'
+$form.Text = 'claudeupdateblocker beta v1.01 ── 18-05-2026'
 $form.Size = New-Object System.Drawing.Size(900, 600)
 $form.StartPosition = 'CenterScreen'
 $form.BackColor = [System.Drawing.Color]::Black
@@ -31,7 +31,7 @@ $cyanLabel.Location = New-Object System.Drawing.Point(10, 95)
 $cyanLabel.Size = New-Object System.Drawing.Size(860, 25)
 $cyanLabel.Font = New-Object System.Drawing.Font('Consolas', 10, [System.Drawing.FontStyle]::Bold)
 $cyanLabel.ForeColor = [System.Drawing.Color]::Cyan
-$cyanLabel.Text = 'claudeupdateblocker beta v1.01 ── 06-05-2026'
+$cyanLabel.Text = 'claudeupdateblocker beta v1.01 ── 18-05-2026'
 $cyanLabel.TextAlign = 'MiddleCenter'
 
 $lockButton = New-Object System.Windows.Forms.Button
