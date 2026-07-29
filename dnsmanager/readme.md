@@ -6,7 +6,7 @@
 
 A sleek graphical user interface to easily manage and switch between DNS providers on Windows 11 with full IPv4 and IPv6 support.
 
-![DNS Manager Screenshot](https://via.placeholder.com/550x520/28,40,71/FFFFFF?text=DNS+Manager+Screenshot)
+![DNS Manager Screenshot](https://github.com/claudemods/Windows/blob/main/dnsmanager/v1.0.png)
 
 ## ✨ Features
 
